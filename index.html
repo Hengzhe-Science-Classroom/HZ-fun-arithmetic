@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun Arithmetic & Number Sense</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <button id="sidebar-toggle" aria-label="Toggle sidebar">&#9776;</button>
+        <aside id="sidebar">
+            <div id="sidebar-header">
+                <h1>Fun Arithmetic & Number Sense</h1>
+                <p class="author">Tier 1: Foundation (Elementary)</p>
+                <div id="progress-container">
+                    <div id="progress-bar"><div id="progress-fill"></div></div>
+                    <span id="progress-text">0%</span>
+                </div>
+            </div>
+            <div id="search-container">
+                <input type="text" id="search-input" placeholder="Search topics...">
+            </div>
+            <nav id="chapter-nav"></nav>
+            <div id="sidebar-footer">
+                <button id="reset-progress">Reset Progress</button>
+            </div>
+        </aside>
+        <main id="main-content">
+            <div id="welcome-screen">
+                <div class="welcome-hero">
+                    <h1>Fun Arithmetic & Number Sense</h1>
+                    <h2>An Interactive Journey into Numbers</h2>
+                    <p class="welcome-description">
+                        Explore the world of numbers through colorful visualizations and hands-on activities.
+                        From counting to clever problem-solving — math has never been this much fun!
+                    </p>
+                </div>
+                <div class="roadmap">
+                    <h3>What You'll Explore</h3>
+                    <div class="roadmap-parts">
+                        <div class="roadmap-part">
+                            <h4>Part I: Number Basics</h4>
+                            <ul>
+                                <li>Ch 0: Counting & Place Value</li>
+                                <li>Ch 1: Addition Adventures</li>
+                                <li>Ch 2: Subtraction Stories</li>
+                                <li>Ch 3: Multiplication Magic</li>
+                                <li>Ch 4: Division Discovery</li>
+                            </ul>
+                        </div>
+                        <div class="roadmap-part">
+                            <h4>Part II: Number Explorations</h4>
+                            <ul>
+                                <li>Ch 5: Patterns & Sequences</li>
+                                <li>Ch 6: Even, Odd & Number Properties</li>
+                                <li>Ch 7: Estimation & Rounding</li>
+                                <li>Ch 8: Word Problems & Thinking</li>
+                                <li>Ch 9: Number Games & Challenges</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <p class="welcome-start">Select a chapter from the sidebar to begin your adventure!</p>
+            </div>
+            <div id="chapter-content" style="display:none;">
+                <div id="chapter-header">
+                    <div id="chapter-number-badge"></div>
+                    <h1 id="chapter-title"></h1>
+                    <p id="chapter-subtitle"></p>
+                </div>
+                <div id="section-tabs"></div>
+                <article id="section-content"></article>
+                <div id="exercises-panel" style="display:none;">
+                    <h3>Practice Time!</h3>
+                    <div id="exercises-list"></div>
+                </div>
+                <div id="chapter-nav-buttons">
+                    <button id="prev-btn" disabled>&larr; Previous</button>
+                    <span id="section-indicator"></span>
+                    <button id="next-btn">Next &rarr;</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <script src="viz-engine.js"></script>
+
+    <!-- Chapter manifest for lazy loading -->
+    <script>
+    window.CHAPTER_MANIFEST = [
+        {number:0, id:'ch00', title:'Counting & Place Value',     file:'ch00-counting-place-value'},
+        {number:1, id:'ch01', title:'Addition Adventures',        file:'ch01-addition-adventures'},
+        {number:2, id:'ch02', title:'Subtraction Stories',        file:'ch02-subtraction-stories'},
+        {number:3, id:'ch03', title:'Multiplication Magic',       file:'ch03-multiplication-magic'},
+        {number:4, id:'ch04', title:'Division Discovery',         file:'ch04-division-discovery'},
+        {number:5, id:'ch05', title:'Patterns & Sequences',       file:'ch05-patterns-sequences'},
+        {number:6, id:'ch06', title:'Even, Odd & Number Properties', file:'ch06-even-odd-properties'},
+        {number:7, id:'ch07', title:'Estimation & Rounding',      file:'ch07-estimation-rounding'},
+        {number:8, id:'ch08', title:'Word Problems & Thinking',   file:'ch08-word-problems'},
+        {number:9, id:'ch09', title:'Number Games & Challenges',  file:'ch09-number-games'}
+    ];
+    </script>
+
+    <script src="app.js"></script>
+</body>
+</html>
